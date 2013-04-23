@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Title</title>
+        <style type="text/css">
+        td {
+            border: 1px solid #000;
+            width: 200px;
+        }
+        </style>
+    </head>
+
+    <body>
+        <h1>All IPs hits per day</h1>
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>IP</th>
+                <th>URL</th>
+                <th>Hits</th>
+            </tr>
+            {% for row in all_ips_by_date %}
+            <tr>
+                <td>{{ row.day }}</td>
+                <td>{{ row.ip }}</td>
+                <td>{{ row.url__url }}</td>
+                <td>{{ row.hits }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
